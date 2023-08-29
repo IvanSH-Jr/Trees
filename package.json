@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@hexlet/immutable-fs-trees": "^0.7.1"
+  },
+  "name": "trees",
+  "description": "��#\u0000 \u0000T\u0000r\u0000e\u0000e\u0000s\u0000\r\u0000 \u0000",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanSH-Jr/Trees.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanSH-Jr/Trees/issues"
+  },
+  "homepage": "https://github.com/IvanSH-Jr/Trees#readme"
+}
