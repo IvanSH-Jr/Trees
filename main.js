@@ -1,8 +1,9 @@
 import { mkdir, mkfile } from '@hexlet/immutable-fs-trees';
 import { dfs } from './src/depth-first-search.js';
 import { changeOwner } from './src/changeOwner.js';
+import { downcaseFileNames } from './src/downcaseFileNames.js';
 
-const tree = mkdir('/', [
+const tree1 = mkdir('/', [
   mkdir('etc', [
     mkfile('bashrc'),
     mkfile('consul.cfg'),
@@ -14,6 +15,25 @@ const tree = mkdir('/', [
   ]),
 ]);
 
-dfs(tree);
+const tree2 = mkdir('/', [
+  mkdir('eTc', [
+    mkdir('NgiNx'),
+    mkdir('CONSUL', [
+      mkfile('config.json'),
+    ]),
+  ]),
+  mkfile('hOsts'),
+]);
 
-console.log(changeOwner(tree, 'Ivan'));
+//dfs(tree1);
+const tree3 = mkdir('/', [
+  mkdir('eTc', [
+    mkdir('NgiNx'),
+    mkdir('CONSUL', [
+      mkfile('config.json'),
+    ]),
+  ]),
+  mkfile('hOsts'),
+], { lala: 'hexlet' });
+
+console.log(downcaseFileNames(tree3));
