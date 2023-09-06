@@ -2,6 +2,7 @@ import { mkdir, mkfile } from '@hexlet/immutable-fs-trees';
 import { dfs } from './src/depth-first-search.js';
 import { changeOwner } from './src/changeOwner.js';
 import { downcaseFileNames } from './src/downcaseFileNames.js';
+import { getNodesCount } from './src/getNodesCount.js';
 
 const tree1 = mkdir('/', [
   mkdir('etc', [
@@ -25,15 +26,5 @@ const tree2 = mkdir('/', [
   mkfile('hOsts'),
 ]);
 
-//dfs(tree1);
-const tree3 = mkdir('/', [
-  mkdir('eTc', [
-    mkdir('NgiNx'),
-    mkdir('CONSUL', [
-      mkfile('config.json'),
-    ]),
-  ]),
-  mkfile('hOsts'),
-], { lala: 'hexlet' });
-
-console.log(downcaseFileNames(tree3));
+const x = getNodesCount(tree2);
+console.log(x)
