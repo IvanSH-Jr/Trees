@@ -1,27 +1,19 @@
 import { mkdir, mkfile } from '@hexlet/immutable-fs-trees';
+import { dfs } from './src/depth-first-search.js';
+import { changeOwner } from './src/changeOwner.js';
 
-const tree = mkdir(
-  'nodejs-package',
-  [
-    mkfile('Makefile'),
-    mkfile('README.md'),
-    mkdir('dist'),
-    mkdir('__tests__', [
-      mkfile('half.test.js', { type: 'text/javascript' }),
-    ]),
-    mkfile('babel.config.js', { type: 'text/javascript' }),
-    mkdir(
-      'node_modules',
-      [
-        mkdir('@babel', [
-          mkdir('cli', [
-            mkfile('LICENSE'),
-          ]),
-        ]),
-      ],
-      { owner: 'root', hidden: false },
-    ),
-  ],
-  { hidden: true },
-);
-console.log(tree);
+const tree = mkdir('/', [
+  mkdir('etc', [
+    mkfile('bashrc'),
+    mkfile('consul.cfg'),
+  ]),
+  mkfile('hexletrc'),
+  mkdir('bin', [
+    mkfile('ls'),
+    mkfile('cat'),
+  ]),
+]);
+
+dfs(tree);
+
+console.log(changeOwner(tree, 'Ivan'));
